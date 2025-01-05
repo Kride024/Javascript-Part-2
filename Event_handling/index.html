@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin-bottom:2.4rem;
+        }
+        body{
+    width:100vw;
+    height:100vh;
+   margin-top:4rem;
+   background-color:#000;
+   
+    
+}
+h1{  margin-bottom:3rem;
+    font-size: 3rem;
+    color:#fff;
+}
+button{
+    margin-left:0.6rem;
+    padding:0.5rem;
+    border-radius: 1rem;
+    background-color: yellow;
+    
+}
+    </style>
+</head>
+<body>
+    <!-- type 1 -->
+   <h1>Inline Event</h1>
+   <button onclick="alert('Welcome')">greeting</button> 
+   <button ondblclick="alert('Welcome on js course')">greeting again</button>
+   <button onmouseover="alert('Welcome again')">greeting</button> 
+   <!-- type 2 -->
+   <h1>DOM Event handler</h1>
+   <button id="myBtn">greeting</button>
+   <button id="myBtn1">greeting again</button>
+   <!-- type 3 -->
+   <h1>addEventListener Event handler</h1>
+   <button id="myBtn2">greeting</button>
+   <button id="myBtn3">greeting again</button>
+   <script>
+    document.getElementById('myBtn').onclick= ()=>{
+        alert('Mood kharab hai,leave it....priority');
+    };
+    document.getElementById('myBtn1').onmouseover=()=>{
+        alert("Back With Bang mood is temporary !!");
+    }
+    // traditional Way
+    // document.getElementById("myBtn").onclick=function (){
+    //     alert("To the world best");
+    // };
+    
+    //  addEventListener
+    document.getElementById("myBtn2").addEventListener("click",()=>{
+        alert("JavaScript Course is Here !!");
+    });
+    
+    document.getElementById("myBtn3").addEventListener("mouseover",()=>{
+        alert("JavaScript course Kar rahe bro :) ");
+    });
+     
+   </script>
+</body>
+</html>
