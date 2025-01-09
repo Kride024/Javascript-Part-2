@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object Example</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+         /* html{
+
+        } */
+        body{
+         width:100%;
+         height:100vh;
+         background-image:linear-gradient(to right,#5c91e5,#983fc6);
+           display:flex;
+           align-items: center;
+           justify-content: center; 
+          
+        }
+       
+
+         section{
+            margin-top: -5%;
+          
+            & button{
+            padding:0.6rem 2rem;
+            border-radius: 1rem;
+            margin:7% ;
+            box-shadow: rgba(0, 0, 0, 0.24) 1px 8px 8px;
+            margin-bottom: 1.7rem;
+        }
+            #myButton{
+               background-color:#6b9de9; 
+            }
+            #myButton2{
+               background-color:#008793; 
+            }
+       /* input field ke kisi bhi data ke liye "value" use karna padta hai */
+         & h2{
+            margin-left:20%;
+            font-size:1.2rem;
+            letter-spacing:0.001rem ;
+            color:#fff;
+          }
+         & .copyCode{
+            margin-top:1.8rem;
+            margin-left:-2%;
+            padding:1.5rem;
+            background-color: transparent;
+            border-left:solid white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+
+        }  
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <button id="myButton">#5c91e5</button>
+            <button id="myButton2">#983fc6</button>
+        </div>
+        <h2>Copy your code here</h2>
+          <div class="copyCode">
+            background-image:linear-gradient(to right,#5c91e5,#983fc6)
+          </div>
+    </section>
+    <script>
+        let btn1=document.getElementById("myButton");
+        let btn2=document.getElementById("myButton2")
+        let copyDiv = document.querySelector(".copyCode");
+        const hexValues=()=>{
+            let Values="0123456789abcddef";
+            let colors="#";
+            for(let i=0;i<6;i++){
+                colors=colors + Values[Math.floor(Math.random()*16)];
+            }
+            
+            return colors;
+        } 
+        let rgb1="#5c91e5";
+        let rgb2="#983fc6";
+        const handleButton1=()=>{
+             rgb1=hexValues();
+             document.body.style.backgroundImage=`linear-gradient(to right,${rgb1},${rgb2} )`;
+             copyDiv.innerHTML=`background-image:linear-gradient(to right,${rgb1},${rgb2})`;
+             btn1.innerHTML=`${rgb1}`;
+        }
+         const handleButton2=()=>{
+            let rgb2=hexValues();
+            document.body.style.backgroundImage=`linear-gradient(to right,${rgb1},${rgb2} )`;
+            copyDiv.innerHTML=`background-image:linear-gradient(to right,${rgb1},${rgb2})`;
+            btn2.innerHTML=`${rgb2}`;
+         }
+
+         btn1.addEventListener("click",handleButton1);
+        btn2.addEventListener("click",handleButton2);
+
+        copyDiv.addEventListener("click",()=>{
+            navigator.clipboard.writeText(copyDiv.innerHTML);
+            alert("Copied");
+        })
+</script>
+</body>
+</html>
