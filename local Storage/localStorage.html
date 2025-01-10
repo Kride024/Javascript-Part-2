@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            width:100%;
+            height:100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin-top:-4rem;
+            background-image:linear-gradient(to right,#d1663d,#983fc6)
+
+        }
+        button{
+            margin-left: 4rem;
+            border-radius: 1.5rem;
+            padding:0.7rem;
+
+        }
+        
+        #addBtn{
+            background-color: rgb(49, 171, 152);
+        }
+        #getBtn{
+            background-color: #dda23b;
+        }
+        #removeBtn{
+            background-color: #ef413b;
+        }
+    </style>
 </head>
 <body>
    <div>
@@ -26,6 +54,12 @@
             zipCode:"12345",
         },
     };
+
+    //Add to Local Storage
+ const addTodoList=()=>{
+localStorage.setItem("objectData",studentBioData); 
+ };
+
 
     document.getElementById("addBtn").addEventListener("click",()=>{
         addTodoList();
