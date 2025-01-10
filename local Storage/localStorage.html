@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+    <button id="addBtn">Add Data to localStorage</button>
+    <button id="getBtn">Get Data from localStorage</button>
+    <button id="removeBtn">Delete Data from localStorage</button>
+</div>  <!-- In JavaScript everything is a object -->
+<script>
+    const studentBioData={
+        firstName:"Vinod",
+        lastName:"Thapa",
+        age:20,
+        gender:"Male",
+        grade:"A",
+        course:["Math","Science","English"],
+        address:{
+            street:"123 Main St",
+            city:"Cityville",
+            state:"State",
+            zipCode:"12345",
+        },
+    };
+
+    document.getElementById("addBtn").addEventListener("click",()=>{
+        addTodoList();
+    });
+    document.getElementById("getBtn").addEventListener("click",()=>{
+        getTodoList();
+    });
+    document.getElementById("removeBtn").addEventListener("click",()=>{
+        removeTodoList();
+    });
+</script>
+</body>
+</html>
