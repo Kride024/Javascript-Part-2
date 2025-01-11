@@ -57,10 +57,18 @@
 
     //Add to Local Storage
  const addTodoList=()=>{
-localStorage.setItem("objectData",studentBioData); 
+localStorage.setItem("objectData",JSON.stringify(studentBioData)); 
  };
 
+const getTodoList=()=>{
+const retrievedStudentData= JSON.parse(localStorage.getItem("objectData"));
+console.log("Retrieved from Local Storage: ",retrievedStudentData);
 
+};
+
+const removeTodoList=()=>{
+    localStorage.removeItem("objectData");
+}
     document.getElementById("addBtn").addEventListener("click",()=>{
         addTodoList();
     });
