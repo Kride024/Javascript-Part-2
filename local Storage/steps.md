@@ -7,7 +7,7 @@
 
 ## 2.JavaScript Setup
 
--Select the necessary DOM elements and store reference(e.g., `mainTodoElem` and `inputValue`).
+-Select the necessary DOM elements and store reference(e.g., `todo-lists-elem` and `inputValue`).
 
 ## 3.Add Click Event 
 
