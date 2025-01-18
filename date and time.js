@@ -88,7 +88,7 @@ console.log(date9);
 
 //! b. set Date , Month,Year
 
-// const date=new Date();
+ //? const date=new Date();
 
 //? setFullYear(yearValue[,monthValue[,dayValue]]):sets the full year for a specified date according to local time.
 
@@ -102,10 +102,10 @@ console.log(date9);
 // console.log(date);
 
 // //? setDate(day(Date like:15)Value): Sets the day(Date) of the month for a specified date according to local time.
-// date.setDate(13);
+ //date.setDate(13); // result: 1737223802682
 // date.setMonth(1);
 // date.setFullYear(2003);
-// console.log(date);
+ //console.log(date);
 
 //! Concept 2. set and get time,Hour, Minute
 
@@ -125,17 +125,81 @@ console.log(date9);
 
 //! b. set time,hour,minutes,seconds,milliseconds
 
-//? const dates=new Date();
+ const dates=new Date();
 // dates.setHours(10);
 // dates.setMinutes(56);
 // dates.setSeconds(34);
 //* dates.setMilliseconds(600);
 //? const dates=new Date();
-//? dates.setTime(1832090690887);
-//? console.log(dates);
+// dates.setTime(1832090690887);
+console.log(dates);
+//? Through Parse:
+// const dateStrings="2024-02-19T16:30:00Z";
+// const parsedDate=Date.parse(dateStrings);
+// console.log(parsedDate);
 
 
 
+
+//! Extra useful methods of the Date object in JavaScript
+
+//? 1: toLocalString(): Return a string representing the date and time portion of a Date object using the current locale's convention.
+
+// const date = new Date();
+// const localString=date.toLocaleString();
+// console.log(localString);
+
+//? a. toLocalDateString()
+// const date = new Date();
+// const localString=date.toLocaleDateString();
+// console.log(localString);
+//? b. toLocaleTimeString()
+// const date = new Date();
+// const localString=date.toLocaleTimeString();
+// console.log(localString);
+//? c. parse()
+// const dateStrings="2024-02-19T16:30:00Z";
+// const parsedDate=Date.parse(dateStrings);
+// console.log(parsedDate);
+
+//*  ______________________
+//* //* 
+//*       Bonus
+//*  ______________________
+
+
+let newDate = new Date();
+console.log(Date.now());
+console.log(newDate.getTime());
+
+//? "Date.now()" and "new Date().getTime()" is a static method of the Date object.(Return Number of millisecond)
+//? Use "Date.now()" if you want the timestamp right this second.
+
+//! Interview Question:
+
+// ! 1: Write a function to add a specified number of days to given date.
+
+const addDaysToDate =(date, extraDay)=>{
+    let updateDate =date.setDate(date.getDate()+extraDay);
+    updateDate=new Date(updateDate);
+    return updateDate;
+}
+
+const date=new Date("2024-02-29");
+const newDates=addDaysToDate(date,7);
+console.log(newDates);
+
+//! 2: write a function to calculate the difference in days between two given dates.
+
+const getDaysDiff=(d1,d2)=>{
+    let diff=d2-d1; //or Math.abs(d1-d2)
+    let OneDay=24*60*60*1000;
+    return Math.round(diff/OneDay);
+}
+
+const d1= new Date("2024-02-19");
+const d2= new Date("2024-03-01");
+console.log(getDaysDiff(d1,d2));
 
 
 
