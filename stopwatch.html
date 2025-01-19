@@ -15,7 +15,8 @@
                 align-items: center;
                 justify-content: center;
                 margin-top:-5%;
-                background: #000;
+                background: #a7e9ee;
+                /* background-color: black; */
             }
              i{ 
                 color:yellow;
@@ -23,21 +24,29 @@
                
             }
             .fa-tv{
-                    font-size: 24rem;
+                    font-size: 30rem;
                     position:relative;
                     box-shadow: rgba(237, 240, 46, 0.4) 0px 5px, rgba(240, 217, 46, 0.3) 0px 10px, rgba(237, 240, 46, 0.2) 0px 15px, rgba(240, 233, 46, 0.1) 0px 20px, rgba(240, 240, 46, 0.05) 0px 25px;
                 }
                 .fa-ellipsis-vertical{
                     position:absolute;
-                    right:60%;
-                    top:30%;
+                    right:62%;
+                    top:29%;
 
 
-                    color:white;
+                    color:rgb(223, 245, 25);
                     font-size:4.5rem;
 
 
 
+}
+.miniDiv{
+    position:absolute;
+    margin-top:-27%;
+    margin-left: 9%; 
+    font-size: 5rem;
+    color:white;
+   
 }
         /* i{
             color:black;
@@ -58,13 +67,19 @@
            <i class="fa-solid fa-tv"></i>
         </div>
         <div class="miniDiv">
-
+<p id="clock"></p>
         </div>
     </div>
      </div>
     </div>
     <script>
-        
+    const currentTime=()=>{
+        let curTime=new Date().toLocaleTimeString();
+        document.getElementById("clock").innerText=curTime;
+    }
+    currentTime();
+   let Interval= setInterval(()=>currentTime(),1000);
+   Interval();
     </script>
 </body>
 </html>

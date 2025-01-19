@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-top: -5%;
+            width:100%;
+            height:100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #706a6a;
+        }
+        section{
+            width: 20rem;
+             height: 18rem;
+            border:1rem;
+            background:yellow;
+            text-align: center;
+            padding:  2.4rem;
+            border-radius: 1rem;
+            box-shadow: 0 1px 0px #343650, 0 2px 0px #343650, 0 3px 0px #343650,
+    0 4px 0px #343650, 0 5px 0px #343650, 0 6px 0px #343650, 0 7px 0px #343650,
+    0 8px 0px #343650, 0 9px 0px #343650, 0 10px 0px #343650;
+        }
+        p{
+            font-size: 3rem;
+            color: #fb6087;
+        }
+        .buttons{
+            width:100%;
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+            gap:0 2.4rem;
+            /* margin-right: 13rem ;*/
+        }
+        button{
+            width:6rem;
+            height:2rem;
+            border-radius: 10rem;
+            margin:0.3rem;
+            margin-right: 3.6rem;
+            letter-spacing: 0.1rem;
+            &:hover{
+                color:white;
+                /* box-shadow: inset 0 0 0 0.2rem #f5ee62; */
+                background-color: black;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <section>
+        <p id="countDown">0</p>
+        <div class="buttons">
+        <button class="start_btn">Start</button>
+        <button class="reset_btn">Reset</button>
+        <button class="stop_btn">Stop</button>
+        <button class="time_btn">getTime</button>
+        <button class="clear_btn">clearTime</button>
+        </div>
+        <div class="resetValue"></div>
+    </section>
+    <script>
+
+    </script>
+</body>
+</html>
