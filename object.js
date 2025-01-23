@@ -22,20 +22,13 @@
 // let person={
 //     name:"Vinod",
 //     age:30,
-//     isStudent:false,
+//    "is'Student":false,
 //     greet:function(){
 //         console.log("Welcome to world Best CSS Course");
 //        },
 // };
 
-// let person={
-//     name:"Vinod",
-//     age:30,
-//     "is'Student":false, //Key Value type and here use "[]"to access
-//     greet:function(){
-//         console.log("Welcome to world Best js Course");
-//        },
-// };
+
 
 //? Accessing Properties:
 
@@ -50,28 +43,29 @@
 //? Adding and Modifying Properties:
 
 //you can add new properties or modify existing ones:
-person['job']="web dev";
-person.age=30;
-console.log(person);
+// person.job="web dev";
+// person[`age`]=21;
+// console.log(person);
+
 
 //?Method:
 
-person.greet();
+// person.greet();
 
 //? We can add dynamic Keys in an object:
 
-let idType="studentId";
+// let idType="studentId";
 
-let student={
-    [idType]:"A123456",
-    sName:"Vinod",
-    sAge:29,
-    isStudent:true,
-    greet:function(){
-        console.log(
-            `Hey,my ${idType} is ${student[idType]} and my name is ${student.sName}`
-        );
+// let student={
+//     [idType]:"A123456",
+//     sName:"Vinod",
+//     sAge:29,
+//     isStudent:true,
+//     greet:function(){
+//         console.log(
+//             `Hey,my ${idType} is ${student[idType]} and my name is ${student.sName}`
+//         );
         
-    },
-};
- student.greet();
+//     },
+// };
+//  student.greet();
