@@ -69,3 +69,71 @@
 //     },
 // };
 //  student.greet();
+
+//* UseCase: when we want to get the user name and value in react (while making Registration form and login form)
+
+//? Data Modeling:
+// Use Object in real world to show details in organized way.
+
+let car={
+    brand:"Toyota",
+    model:"Camry",
+    year:2022,
+    start:function(){
+        console.log("Engine started");
+          },
+};
+console.log(car);
+car.start();
+
+//! Interview Question:
+
+//? Explain the difference between passing objects by reference and by value in Javascript.Provide an example to demonstrate each scenario.
+
+//sol:In Javascript , primitive data types like numbers and strings are passed by value,while objects are passed by reference.
+//? *  Passing by Value: When passing by value, a copy of the primitive value is created and passed to the function or assigned to
+//? a variable.Any change made to the copy do not affect the original value.
+
+// let a=10;
+// const modifyValue=(x)=>(x=20);
+// console.log(modifyValue(a));
+// console.log(a);
+
+//? * Passing by reference: When passing by reference, a reference to the memory location of
+//? the object is passed to the function or assigned to a variable. Any changes made to the object through this reference
+//? will affect the original object.
+
+// let obj={ id:5,name:"Modifier"};
+// let obj1=obj;
+// obj1.name="thapa technical";
+// console.log(obj1);
+// console.log("Original:" ,obj); // Through this way printing can only done
+
+//* To avoid this behavior and create a true copy of that object,you can use methods like Object.assign() or the spread operator (...);
+
+//* Object.assign():is used to copy properties from one or more source objects to a target object.
+
+// let obj={ id1:5,name1:"Modifier"};
+// let obj1={ id2:5,name2:"Modifier"};
+// let obj2={ id3:5,name3:"Modifier"};
+// let objNew=Object.assign({},obj,obj1,obj2);
+// console.log(objNew);
+
+//? Comparison by Reference:
+
+// Two objects are equal only if they refer to the same object.
+// Independent objects (even if they look alike) are not equal.
+//(address matter)
+
+// const obj1={ id2:5,name2:"Modifier"};
+// const obj2={ id2:5,name2:"Modifier"};
+// const obj3=obj1;
+
+//  const isEqual=obj1==obj3?true:false;
+//  console.log(isEqual);
+ 
+
+
+
+
+
