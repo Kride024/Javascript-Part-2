@@ -132,7 +132,57 @@ car.start();
 //  const isEqual=obj1==obj3?true:false;
 //  console.log(isEqual);
  
+//? JSON (JavaScript Object Notation):
+ // 1. JSON.stringify(...)
+ //2. JSON.parse(...)
 
+ //? "this" object:
+
+ //* The "this" keyword refers to different objects depending on how it is used:
+
+ //In an object method,this refers to the object.
+ //Alone,this refers to the global object.
+ //In a function,this refer to the global object.
+ //In a function,in strict mode,this is undefined.
+ //In an event,this refers to the element that received the event.
+ //Methods like call(),apply(),and bind() can refer this to any object.
+
+ //? Object useful methods:
+
+ const product={
+    id:1,
+    name:"Laptop",
+    category:"Computer",
+    brand:"ExampleBrand",
+    price:999.99,
+    stock:50,
+    description:
+    "Powerful laptop with a quad-core i5 processor,8GB RAM,226GB SSD,and 14-inch display",
+    image:"Image used during product",
+ };
+
+ //? 1:Object.keys():ids array
+
+//  let keys=Object.keys(product);
+//  console.log(keys);
+
+ //? 2:Object.values():values array
+
+//  let values=Object.values(product);
+//  console.log(values);
+
+  //? 2:Object.entries():entries(both key and values) array individually after that combine array arrays.
+
+  let entries=Object.entries(product);
+  console.log(entries);
+
+  //? Object.hasOwnProperty():boolean return either present or not
+
+  console.log(product.hasOwnProperty(`name`));
+  console.log(product.hasOwnProperty(`is`));
+  
+  
+ 
 
 
 
