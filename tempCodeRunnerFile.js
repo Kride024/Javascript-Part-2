@@ -1,3 +1,3 @@
-const dateStrings="2024-02-19T16:30:00Z";
-// const parsedDate=Date.parse(dateStrings);
-// console.log(parsedDate);
+  const target={a:1,b:2,};
+  const source={b:7,c:8,};(both work)
+  console.log(Object.assign({},target,source));

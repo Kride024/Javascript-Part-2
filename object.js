@@ -171,17 +171,78 @@ car.start();
 //  let values=Object.values(product);
 //  console.log(values);
 
-  //? 2:Object.entries():entries(both key and values) array individually after that combine array arrays.
+  //? 3:Object.entries():entries(both key and values) array individually after that combine array arrays.
 
-  let entries=Object.entries(product);
-  console.log(entries);
+  // let entries=Object.entries(product);
+  // console.log(entries);
 
-  //? Object.hasOwnProperty():boolean return either present or not
+  //? 4:Object.hasOwnProperty():boolean return either present or not
 
-  console.log(product.hasOwnProperty(`name`));
-  console.log(product.hasOwnProperty(`is`));
+  // console.log(product.hasOwnProperty(`name`));
+  // console.log(product.hasOwnProperty(`is`));
+  
+  //? 5:Object.assign():assign value to empty object from copies of original (could be more than one object)
+ 
+  // const target={a:1,b:2,};
+  // const source={b:7,c:8,};(both work)
+  // console.log(Object.assign({},target,source));
+  // console.log(Object.assign(target,source));
   
   
+ //? 6:Object.freeze():freeze an object,no modification are possible.
+
+//  Object.freeze(product);
+//  product.id=7;
+//  console.log(product);
+ 
+//! Interview Question:
+
+//? 1.Output:
+
+  // const target={a:1,b:2,};
+  // const source={b:7,c:8,};
+  // console.log(Object.assign({},target,source));
+  //Output:{ a: 1, b: 7, c: 8 }
+
+ //? 2.Object Manipulation
+ //? Given object add new sub with grade and check grade properly implemented.
+ 
+ let student={
+  name:"Bob",
+  age:20,
+  grades:{
+    math:90,
+    science:85,
+    history:88,
+  },
+ };
+
+//  student.grades[`computer`]=92;
+// student.grades.computer=92;
+ console.log(student);
+
+ //? 3. Object have Properties and values are same
+ 
+ let obj1={name:"Alice",age:26,city:"New York",};
+ let obj2={name:"Alice",age:26,city:"New York",};
+ let obj3={name:"Bob",age:26,city:"Sans",};
+
+ const areObjectEqual=(obj1,obj2)=>{
+  let o1=Object.keys(obj1);
+  let o2=Object.keys(obj2);
+  if(o1.length!=o2.length)return false;
+  for(let key in obj1){
+    console.log(obj1[key]);
+    
+    if(obj1.key!=obj2.key)return false;
+    
+    
+  }
+  return true;
+}
+
+ console.log(areObjectEqual(obj1,obj3));
+ 
  
 
 
