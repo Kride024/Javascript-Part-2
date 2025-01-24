@@ -245,17 +245,17 @@ car.start();
  
 //! Problem: Write a function that transforms an array of an object into object where the keys are the object id.
 
-let inputArray=[
-  {id:1,name:"Alice"},
-  {id:2,name:"Bob"},
-  {id:3,name:"Charlie"},
-];
-let newElem={};
-for(let key of inputArray){
-  //index vibe
-  newElem[key.id]=key;
-}
-console.log(newElem);
+// let inputArray=[
+//   {id:1,name:"Alice"},
+//   {id:2,name:"Bob"},
+//   {id:3,name:"Charlie"},
+// ];
+// let newElem={};
+// for(let key of inputArray){
+//   //index vibe
+//   newElem[key.id]=key;
+// }
+// console.log(newElem);
 
 
 
