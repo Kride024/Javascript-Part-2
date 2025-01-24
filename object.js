@@ -207,43 +207,56 @@ car.start();
  //? 2.Object Manipulation
  //? Given object add new sub with grade and check grade properly implemented.
  
- let student={
-  name:"Bob",
-  age:20,
-  grades:{
-    math:90,
-    science:85,
-    history:88,
-  },
- };
+//  let student={
+//   name:"Bob",
+//   age:20,
+//   grades:{
+//     math:90,
+//     science:85,
+//     history:88,
+//   },
+//  };
 
 //  student.grades[`computer`]=92;
 // student.grades.computer=92;
- console.log(student);
+//  console.log(student);
 
  //? 3. Object have Properties and values are same
  
- let obj1={name:"Alice",age:26,city:"New York",};
- let obj2={name:"Alice",age:26,city:"New York",};
- let obj3={name:"Bob",age:26,city:"Sans",};
+//  let obj1={name:"Alice",age:26,city:"New York",};
+//  let obj2={nam:"Alice",age:26,city:"New York",};
+//  let obj3={name:"Bob",age:26,city:"Sans",};
 
- const areObjectEqual=(obj1,obj2)=>{
-  let o1=Object.keys(obj1);
-  let o2=Object.keys(obj2);
-  if(o1.length!=o2.length)return false;
-  for(let key in obj1){
-    console.log(obj1[key]);
+//  const areObjectEqual=(obj1,obj2)=>{
+//   let o1=Object.keys(obj1);
+//   let o2=Object.keys(obj2);
+//   if(o1.length!=o2.length)return false;
+//   for(let key in obj1){
+//     console.log(obj1[key]);
+//     //like index
+//     if(obj1[key]!=obj2[key])return false;
     
-    if(obj1.key!=obj2.key)return false;
     
-    
-  }
-  return true;
+//   }
+//   return true;
+// }
+
+//  console.log(areObjectEqual(obj1,obj2));
+ 
+//! Problem: Write a function that transforms an array of an object into object where the keys are the object id.
+
+let inputArray=[
+  {id:1,name:"Alice"},
+  {id:2,name:"Bob"},
+  {id:3,name:"Charlie"},
+];
+let newElem={};
+for(let key of inputArray){
+  //index vibe
+  newElem[key.id]=key;
 }
+console.log(newElem);
 
- console.log(areObjectEqual(obj1,obj3));
- 
- 
 
 
 
