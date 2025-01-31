@@ -1,0 +1,79 @@
+
+<!--*____________________________________________
+<!--* Event Propagation
+ <!--*___________________________________________
+
+ <!--* Event propagation refers to the process of how events propagate or travel through the DOM (Document object Model) hierarchy.
+ <!--? In js, there are two phase of event propagation:capturing phase and bubbling phase.
+
+ <!--* event.stopPropagation()
+ <! The stopPropagation() method of the Event interface prevents further propagation of the current event in the capturing and bubbling phases.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style></style>
+</head>
+<body>
+<section>
+    <div id="outer">
+        outer
+        <div id="middle">
+           middle
+            <div id="inner">
+              Inner
+            </div>            
+        </div>
+    </div>
+</section>
+<script>
+const callOuter=(event)=>{
+console.table([{
+    Description:"I am Outer One",
+    Target:event.target,
+    CurrentTarget:event.currentTarget,
+},
+]);
+// document.getElementById("outer").style.backgroundColor = 'red';
+
+};
+const callMiddle=(event)=>{
+console.table([{
+    Description:"I am Middle One",
+    Target:event.target,
+    CurrentTarget:event.currentTarget,
+},
+]);
+
+
+};
+const callInner=(event)=>{
+console.table([{
+    Description:"I am Inner One",
+    Target:event.target,
+    CurrentTarget:event.currentTarget,
+},
+]);
+
+// event.stopPropagation();
+};
+
+
+// By Default is the bubbling phase
+// document.getElementById("outer").addEventListener("click",callOuter);
+// document.getElementById("middle").addEventListener("click",callMiddle);
+// document.getElementById("inner").addEventListener("click",callInner);
+<!--! see currentTarget>
+<!--? To achieve event capturing,you can use the third parameter of the addEventListener method,which specifies whether the event should be captured during the capturing phase.Setting it to true will activate the capturing phase.-->
+ 
+document.getElementById("outer").addEventListener("click",callOuter,true);
+document.getElementById("middle").addEventListener("click",callMiddle,true);
+document.getElementById("inner").addEventListener("click",callInner,true);
+</script>
+</body>
+</html>
+ 

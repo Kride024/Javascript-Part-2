@@ -46,3 +46,5 @@ const replaceWith = myName.with(1,"thapaTechnical");
 console.log("Original",myName);
 console.log("Replaced",replaceWith);
 
+
+
