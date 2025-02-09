@@ -6,4 +6,84 @@
   <!-- Example -->
    <!--? consider you have list of 100 element and you have to fire same "click element to all" else than adding separate event listener to each element-->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+            background-color: black;
+            & h1{
+                color:white;
+                align-items: center;
+                display:grid;
+                place-items: center;
+            }
+        }
+        .mainBody{
+            display:grid;
+            grid-template-columns: repeat(12,1fr);
+            place-items: center;
+            /* grid-auto-flow: dense; */
+           
+            & .element{
+                color:white;
+                border:0.1rem solid red;
+                margin:1rem;
+                padding:0.9rem;
+                border-radius: 0.4rem;
+                letter-spacing: 0.1rem;
+            }
+            @media (width<1200px) {
+                grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+  <h1>Event Delegation-Periodic Table</h1>
+    <section class="mainBody"></section>  
+    <script>
+        const mainBody=document.querySelector('.mainBody');
+        //construct div
+    const  constructDiv=(symbol,atomicNumber,name)=>{
+        // const mainBody=document.querySelector(mainBody);
+        const element=document.createElement("div");
+        element.classList.add("element");
+        element.innerHTML=symbol;
+        element.setAttribute("data-atomic-number",atomicNumber);
+        element.setAttribute("data-element-name",name);
+        mainBody.append(element);
+    }   
+    
+    //print all
+    const constructFrame=()=>{
+        
+        for(let i=1;i<=50;i++){
+            constructDiv(`Elem${i}`,i,`Element ${i}`);
+          }
+        }
+    
+        //event-handling
+    mainBody.addEventListener('click',(ele)=>{
+        const target=ele.target;
+        if(target.classList.contains("element")){
+            const atomicNumber=target.getAttribute("data-atomic-number");
+            const elementName=target.getAttribute("data-element-name");
+            alert(`Atomic Number: ${atomicNumber}\nElement Name:${elementName}`); 
+        }
+    })
+        //calling
+    constructFrame();
+    </script>
+</body>
 
+</html>
