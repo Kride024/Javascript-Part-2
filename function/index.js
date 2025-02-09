@@ -48,3 +48,37 @@ function greetUser(name){
 }
 
 processUserInput("Vinod",greetUser);
+//function call pass as argument called higher order function.
+
+
+ //*____________________________________________
+ //*   Closure:
+ //*___________________________________________
+
+ //Already taught in why we need js ?
+
+ 
+ //*__________________________________________
+ //!  InterView Questions
+ //*__________________________________________
+ 
+ //? Define a higher-order function called mathOperation that takes three parameters: x,y, and operation.
+//? Implement two callback Function;
+//? add: Takes two numbers x and y and returns their sum.
+//? sub: Takes Two numbers x and y and returns the result of subtracting x from y.
+//? Use the mathOperation function to perform addition and subtraction operations on Two variables a and b.
+//? Display the results of the operations.
+
+const mathOperation=(a,b,operation)=>{
+    return operation(a,b);
+};
+const add=(a,b)=>{
+    return a+b;
+};
+const sub=(a,b)=>{
+    return b-a;
+}
+console.log(mathOperation(5,15,add));
+console.log(mathOperation(5,15,sub));
+
+
