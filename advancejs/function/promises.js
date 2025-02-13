@@ -52,3 +52,41 @@
 
  // 1: By default promise has the pending state
  // 2: The moment we use setTimeout,we need to handle promises, we can do using then and catch
+
+
+const pr=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("Hey, I miss you");
+    },2000);
+ }).then((res)=>{
+    console.log(res);
+    }).catch((error)=>{
+        console.log(error);
+        }).finally(()=>{
+            console.log("Don't Worry, we will miss you and keep smiling");
+         });
+
+// Example:2
+const studentName="Alice";
+const enrollStudent=(studentName)=>{
+    return new Promise((resolve,reject)=>{
+       setTimeout(()=>{
+        const isSuccessful=Math.random()>0.4;
+        if(isSuccessful){
+            resolve(`Enrolled successful for ${studentName}`);
+        }
+        else{
+            reject(`Enrolled failed for ${studentName}. Please try again.`);
+            
+        }
+       },2000);
+    });
+}
+
+enrollStudent(studentName).then((res)=>{
+    console.log(res);
+    }).catch((error)=>{
+        console.log(error);
+         }).finally(()=>{
+            console.log("Enrollment process completed.");
+            });
