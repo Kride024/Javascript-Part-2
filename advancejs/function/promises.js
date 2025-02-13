@@ -90,3 +90,36 @@ enrollStudent(studentName).then((res)=>{
          }).finally(()=>{
             console.log("Enrollment process completed.");
             });
+
+ //*____________________________________________
+ //*   Promise Methods :
+ //*___________________________________________
+
+ //? Promise.all is used when you want for all promises to complete successfully. Reject state will throw an error.
+
+ //? Promise.allSettled is used when you want to wait for all promises to complete, regardless of success or failure, and get information about their outcomes.
+
+ //? Promise.race is used when you are interested in the result of the first promise that completes,regardless of success or failure.
+
+
+ //! Examples:
+
+ const promise1= new Promise((resolve,reject)=>
+    setTimeout(()=>resolve("First"),100),100
+);
+const promise2= new Promise((resolve,reject)=>setTimeout(()=>resolve("second"),5000));
+
+const promise3= new Promise((resolve,reject)=>setTimeout(()=>reject("Third"),2000));
+
+//Promise.all([promise1,promise2,promise3]).then((value)=>console.log(value));
+
+// Promise.allSettled([promise1,promise2,promise3])
+// .then((value)=>{
+//     console.log(value);
+//     });
+
+Promise.race([promise1,promise2,promise3])
+.then((value)=>{
+    console.log(value);
+    
+});
