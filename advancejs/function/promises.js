@@ -120,6 +120,5 @@ const promise3= new Promise((resolve,reject)=>setTimeout(()=>reject("Third"),200
 
 Promise.race([promise1,promise2,promise3])
 .then((value)=>{
-    console.log(value);
-    
+    console.log(value);   
 });
