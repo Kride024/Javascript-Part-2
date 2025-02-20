@@ -74,7 +74,9 @@
  console.log(data.joke);
  api_body.innerHTML=data.joke;
  
-        }).catch((error)=>{console.log("we found error");
+        }).catch((error)=>{
+        api_body.innerHTML="api is not working properly";
+        console.log("we found error");
         })
     } 
 

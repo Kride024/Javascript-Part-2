@@ -1,0 +1,40 @@
+<!--* async and await are JavaScript keywords introduced in ECMAScript 2017 (ES8) 
+that make asynchronous code look and behave more like synchronous code, making it easier to write,read, and reason 
+about synchronous operations. -->
+
+<!--? async function Declaration: The async keyword is used to declare an asynchronous function. An asynchronous function returns a Promise implicitly, even if the return value is not explicitly wrapped in a Promise. Inside an asynchronous function, you can use the await keyword to pause the execution of code until a Promise is resolved or rejected. -->
+
+<!--? await Operator: The await keyword is used to pause the execution of an async function until a Promise is settled(resolve or rejected). It can only be used inside an async function.when await is used with a Promise,it waits for the Promise to 
+ resolve value. If the promise is rejected, it throws an error that can be caught using a try .....catch block.-->
+<!--! Unable to catch error to resolve this we use try catch method -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>Click To get Jokes</h1>
+    <section class="api_body"></section>
+    <button id="button">Click</button>
+    <script>
+        const api_body=document.querySelector(".api_body");
+        const apiUrl="https://icanhazdadjoke.com/";
+        async function get_Api(){
+           const value=  await fetch(apiUrl,{
+            headers:{
+                Accept:"application/json",
+            },
+           });
+         //   console.log(value);
+           
+           const data= await value.json();
+         //   console.log(data);
+           
+           api_body.innerHTML=data.joke;
+        }
+        document.getElementById("button").addEventListener("click",get_Api);
+    </script>
+ </body>
+ </html>
