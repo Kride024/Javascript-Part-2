@@ -1,0 +1,43 @@
+<!-- *  In JavaScript, the try...catch statement is used for error handling. It allows you to catch and handle exceptions (errors) that occur within a block of code. Here's how it works: -->
+
+<!--? try block: The try block contains the code that you want to executes. It is the block of code where you anticipate that an error might occur. -->
+
+<!--? catch Block: The catch block follows the try Block and is used to catch any exceptions (errors) that occur within the try block. 
+If an exceptions(errors) that occur within the try block. If an exception occurs, JavaScript jumps to the block to handle the error. The catch block
+takes an error object as a parameter, which can be used to access information about the error, such as its message or stack trace.  -->
+
+<!--? Finally Block (Optional): The finally block, If provided, is executed regardless of whether an error occur or not. It is typically used for cleanup tasks that should always be performed, such as closing resources or releasing locks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Click To get Jokes</h1>
+    <section class="api_body"></section>
+    <button id="button">Click</button>
+    <script>
+      const  api_body=document.querySelector(".api_body");
+      const apiUrl="https://icanhazdadjoke.com/";
+      fetch_data = async ()=>{ try{
+        const value = await fetch(apiUrl,{
+            headers:{
+                Accept:"application/json",
+            },
+        });
+        const data= await value.json();
+        api_body.innerHTML=data.joke;
+      }
+      catch(error){
+      api_body.innerHTML=error;
+      }
+        
+      }
+      
+      document.getElementById("button").addEventListener("click",fetch_data);
+    </script>  
+</body>
+</html>
