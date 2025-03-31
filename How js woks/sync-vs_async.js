@@ -11,6 +11,7 @@
 //         console.log("fun1 ended");
 //     }
 //     fun1();
+  
 //? Example 2(aSynchronous) 
 // const fun2=()=>{ //! setTimeOut((),2000) it go in "Web APIs" and other go in "CALl STACK"
 //     setTimeOut(()=>{
